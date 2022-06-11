@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-<color name="background">#202225</color>
-    <color name="lightBackground">#FF450F20</color>
-    <color name="darkText">#000000</color>
-    <color name="lightText">#FEF6F8</color></resources>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <color name="appBackground">#202225</color>
+    <color name="lightBackground">#ff450f20</color>
+    <color name="darkText">#ffffff</color>
+    <color name="lightText">#fef6f8</color>
+</resources>

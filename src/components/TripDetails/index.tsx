@@ -1,7 +1,7 @@
 import { IconSize, reSize, Sizes, ThemeColor } from '@config';
 import Images from '@images';
 import React, { FC } from 'react';
-import { StyleSheet, View } from 'react-native';
+import { Platform, StyleSheet, View } from 'react-native';
 import Animated, {
   Extrapolate,
   interpolate,
@@ -61,6 +61,11 @@ export const styles = StyleSheet.create({
   border: {
     ...StyleSheet.absoluteFillObject,
     borderRadius: reSize(22),
+    borderColor: '#fff',
+  },
+  borderIOS: {
+    borderRadius: reSize(22),
+    ...StyleSheet.absoluteFillObject,
     borderColor: ThemeColor.BACKGROUND,
   },
   bottomImage: {
@@ -156,7 +161,12 @@ const BoxImage: FC<BoxImageProps> = ({ index, item, scrollX, onPress }) => {
         style={[styles.bottomImage]}
         source={item}
       />
-      <Animated.View style={[styles.border, animatedStyles]} />
+      <Animated.View
+        style={[
+          Platform.select({ ios: styles.borderIOS, android: styles.border }),
+          animatedStyles,
+        ]}
+      />
     </ReHighlight>
   );
 };

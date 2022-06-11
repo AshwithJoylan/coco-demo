@@ -44,13 +44,13 @@ const styles = StyleSheet.create({
   tab: {
     width: ITEM_SIZE,
     height: '100%',
-
+    overflow: 'hidden',
     borderRadius: ITEM_SIZE / 2,
   },
   tabButton: {
     flex: 1,
     justifyContent: 'center',
-    overflow: 'hidden',
+
     alignItems: 'center',
     borderRadius: ITEM_SIZE / 2,
   },
@@ -63,8 +63,8 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.36,
     shadowRadius: 7,
-
-    elevation: 5,
+    borderRadius: ITEM_SIZE / 2,
+    elevation: 10,
   },
 });
 

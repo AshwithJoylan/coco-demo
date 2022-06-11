@@ -1,8 +1,14 @@
 import React, { createContext, FC, useContext } from 'react';
-import { ActivityIndicator, FlatList, StyleSheet, View } from 'react-native';
+import {
+  ActivityIndicator,
+  FlatList,
+  PlatformColor,
+  StyleSheet,
+  View,
+} from 'react-native';
 
 import { Interest, useInterests, useUsers } from '@firebase';
-import { reSize, Sizes } from '@config';
+import { reSize, Sizes, ThemeColor } from '@config';
 import { P1, P2 } from '../commons/Texts';
 import Pill from '../commons/Pill';
 import ReHighlight from '../commons/ReHighlight';
@@ -21,6 +27,7 @@ const styles = StyleSheet.create({
     paddingVertical: reSize(10),
     paddingHorizontal: Sizes.DEFAULT_PADDING,
     borderBottomWidth: StyleSheet.hairlineWidth,
+    // borderBottomColor: PlatformColor('@color/lightText'),
   },
 });
 

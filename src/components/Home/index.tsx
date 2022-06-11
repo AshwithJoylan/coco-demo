@@ -1,5 +1,11 @@
-import React, { FC, useCallback } from 'react';
-import { StyleSheet, View, useColorScheme, Pressable } from 'react-native';
+import React, { FC, useCallback, useRef } from 'react';
+import {
+  StyleSheet,
+  View,
+  useColorScheme,
+  Pressable,
+  Platform,
+} from 'react-native';
 import FastImage from 'react-native-fast-image';
 import Animated, {
   Extrapolate,
@@ -62,14 +68,18 @@ export const styles = StyleSheet.create({
     paddingBottom: '6%', //2 * Sizes.DEFAULT_PADDING,
   },
   infoContainer: {
-    alignSelf: 'stretch',
     position: 'absolute',
     right: Sizes.DEFAULT_PADDING,
-    alignItems: 'flex-start',
+    backgroundColor: ThemeColor.TRANSPARENT,
     left: Sizes.DEFAULT_PADDING,
+    overflow: 'hidden',
     borderRadius: Sizes.BORDER_RADIUS_MAX,
     bottom: Sizes.DEFAULT_PADDING,
+  },
+  infoBlur: {
+    width: '100%',
     padding: Sizes.DEFAULT_PADDING,
+    backgroundColor: ThemeColor.BACKGROUND,
   },
   innerContainer: {
     marginTop: reSize(10),
@@ -79,6 +89,7 @@ export const styles = StyleSheet.create({
   },
   subContainer: {
     flex: 1,
+    width: '100%',
   },
   prince: { marginTop: reSize(4) },
   cart: {
@@ -123,6 +134,18 @@ export const List: FC<ListProps> = ({ data }) => {
   );
 };
 
+const Blur = (props: any) => {
+  const isDark = useColorScheme() === 'dark';
+  return Platform.select({
+    ios: (
+      <BlurView {...props} blurType={isDark ? 'dark' : 'light'}>
+        {props.children}
+      </BlurView>
+    ),
+    android: <View {...props}>{props.children}</View>,
+  }) as any;
+};
+
 type HomeCardProps = {
   item: any;
   index: number;
@@ -151,7 +174,7 @@ export const HomeCard: FC<HomeCardProps> = ({ item, index, scrollX }) => {
     };
   }, []);
 
-  const isDark = useColorScheme() === 'dark';
+  const ref = useRef<BlurView>(null);
 
   return (
     <Pressable
@@ -167,23 +190,22 @@ export const HomeCard: FC<HomeCardProps> = ({ item, index, scrollX }) => {
           resizeMode="cover"
           source={Images.TURKEY}
         />
-        <BlurView
-          blurType={isDark ? 'dark' : 'light'}
-          blurAmount={20}
-          style={styles.infoContainer}>
-          <Pill>Turkey</Pill>
-          <View style={styles.innerContainer}>
-            <View style={styles.subContainer}>
-              <H2>Cappadocia</H2>
-              <P1 style={styles.prince}>$50.00</P1>
+        <View style={styles.infoContainer}>
+          <Blur style={styles.infoBlur}>
+            <Pill>Turkey</Pill>
+            <View style={styles.innerContainer}>
+              <View style={styles.subContainer}>
+                <H2>Cappadocia</H2>
+                <P1 style={styles.prince}>$50.00</P1>
+              </View>
+              <HeaderLeft
+                color={ThemeColor.DARK_TEXT}
+                icon="cart"
+                style={styles.cart}
+              />
             </View>
-            <HeaderLeft
-              color={ThemeColor.DARK_TEXT}
-              icon="cart"
-              style={styles.cart}
-            />
-          </View>
-        </BlurView>
+          </Blur>
+        </View>
       </Animated.View>
     </Pressable>
   );

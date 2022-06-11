@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { StatusBar, useColorScheme } from 'react-native';
+import { PlatformColor, StatusBar, useColorScheme } from 'react-native';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
 
 import '@i18n';
@@ -8,6 +8,7 @@ import { commonStyles } from '@commons';
 import { ThemeColor } from '@config';
 
 const StatusBarComponent = () => {
+  console.log(PlatformColor('@android:color/background'));
   const isDark = useColorScheme() === 'dark';
   return (
     <StatusBar

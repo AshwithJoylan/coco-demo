@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-<color name="background">#ffffff</color>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <color name="appBackground">#ffffff</color>
     <color name="lightBackground">#FEF6F8</color>
     <color name="darkText">#000000</color>
-    <color name="lightText">#FEF6F8</color>
+    <color name="lightText">#C2C0C1</color>
 </resources>

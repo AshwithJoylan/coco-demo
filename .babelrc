@@ -53,21 +53,19 @@
                 ".android.js"
               ],
               "alias": {
-                "@features": "./src/features",
-                "@firebase": "./src/firebase",
+                "@config": "./src/config",
                 "@i18n": "./src/i18n",
-                "@hooks": "./src/hooks",
+                "@features": "./src/features",
                 "@components": "./src/components",
+                "@commons": "./src/components/commons",
                 "@constants": "./src/constants",
                 "@images": "./src/images",
-                "@navigators": "./src/navigators",
+                "@navigation": "./src/navigation",
                 "@screens": "./src/screens",
                 "@services": "./src/services",
                 "@store": "./src/store",
-                "@database": "./src/database",
                 "@types": "./src/types",
-                "@utils": "./src/utils",
-                "@commons": "./src/commons"
+                "@firebase": "./src/firebase"
               }
             }
           ]]

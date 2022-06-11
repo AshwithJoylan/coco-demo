@@ -100,6 +100,7 @@ const ScreenOptions = {
     headerTitleStyle: {
       ...Font.HEADER,
     },
+
     headerBackgroundContainerStyle: {
       backgroundColor: ThemeColor.BACKGROUND,
     },
@@ -120,6 +121,7 @@ const ScreenOptions = {
   MAIN: {
     cardStyle: { backgroundColor: ThemeColor.BACKGROUND },
     headerShown: false,
+    headerTitleAlign: 'center',
     cardStyleInterpolator: CardStyleInterpolators.forHorizontalIOS,
   } as StackNavigationOptions,
   HOME: {
@@ -130,6 +132,7 @@ const ScreenOptions = {
     },
     headerLeft: () => <HeaderLeft isMenuIcon />,
     headerRight: () => <ProfileAvatar />,
+    headerTitleAlign: 'center',
   } as BottomTabNavigationOptions,
   BOTTOM_TABS: {
     headerShown: false,
@@ -138,6 +141,7 @@ const ScreenOptions = {
     headerTitleStyle: {
       ...Font.HEADER,
     },
+    headerTitleAlign: 'center',
     headerBackgroundContainerStyle: {
       backgroundColor: ThemeColor.BACKGROUND,
     },

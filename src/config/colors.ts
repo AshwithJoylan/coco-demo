@@ -4,19 +4,19 @@ export const ThemeColor = {
   PRIMARY: '#FF450F',
   DARK_TEXT: Platform.select({
     ios: PlatformColor('darkText'),
-    default: '#fff', //PlatformColor('@android:color/darkText'),
+    android: PlatformColor('@color/darkText'),
   }) as any,
   LIGHT_TEXT: Platform.select({
     ios: PlatformColor('lightText'),
-    default: '#ccc', // PlatformColor('@android:color/lightText'),
+    android: PlatformColor('@color/lightText'),
   }) as any,
   BACKGROUND: Platform.select({
     ios: PlatformColor('background'),
-    android: PlatformColor('@android:color/background'),
+    android: PlatformColor('@color/appBackground'),
   }) as any,
   LIGHT_BACKGROUND: Platform.select({
     ios: PlatformColor('lightBackground'),
-    default: '#cccccc40', //PlatformColor('@android:color/lightBackground'),
+    android: PlatformColor('@color/lightBackground'),
   }) as any,
   TRANSPARENT: 'transparent',
 };

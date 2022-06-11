@@ -21,7 +21,7 @@ const Item: FC<{ text: I18nTextTranslations; screen: string }> = ({
       style={{
         alignSelf: 'stretch',
         borderBottomWidth: StyleSheet.hairlineWidth,
-        borderBottomColor: ThemeColor.LIGHT_TEXT,
+        // borderBottomColor: ThemeColor.LIGHT_TEXT,
         paddingVertical: Sizes.DEFAULT_PADDING,
         paddingHorizontal: Sizes.DEFAULT_PADDING,
       }}>

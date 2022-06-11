@@ -3,6 +3,8 @@ package com.coco;
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;
 import com.facebook.react.ReactRootView;
+
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 
 public class MainActivity extends ReactActivity {
@@ -36,6 +38,7 @@ public class MainActivity extends ReactActivity {
       super(activity, mainComponentName);
     }
 
+    @SuppressLint("ResourceAsColor")
     @Override
     protected ReactRootView createRootView() {
       ReactRootView reactRootView = new ReactRootView(getContext());
