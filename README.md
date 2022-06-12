@@ -2,6 +2,16 @@
 
 ---
 
+
+
+## ScreenShots
+| Light Mode | Dark Mode |
+|----------|------------|
+| ![applist light](https://github.com/AshwithJoylan/coco-demo/blob/main/screenshots/apps-list-light.png)  | ![applist dark](https://github.com/AshwithJoylan/coco-demo/blob/main/screenshots/apps-list-dark.png) |
+| ![firebase light](https://github.com/AshwithJoylan/coco-demo/blob/main/screenshots/firebase-demo-1-light.png)  | ![firebase dark](https://github.com/AshwithJoylan/coco-demo/blob/main/screenshots/firebase-demo-1-dark.png) |
+| ![ui light](https://github.com/AshwithJoylan/coco-demo/blob/main/screenshots/ui-home-light.png)  | ![ui  dark](https://github.com/AshwithJoylan/coco-demo/blob/main/screenshots/ui-home-dark.png) |
+| ![details light](https://github.com/AshwithJoylan/coco-demo/blob/main/screenshots/ui-details-light.png)  | ![details  dark](https://github.com/AshwithJoylan/coco-demo/blob/main/screenshots/ui-details-dark.png) |
+
 ## Project Setup
 - Requires React Native Environment Setup
 - install node_modules
